@@ -36,17 +36,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">RLF</a>
+                <a class="navbar-brand" href="/home">RLF</a>
             </div>
             <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
+           <ul class="nav navbar-right top-nav">
                
+              
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><b class="caret">{{ Auth::user()->name }}</b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>   {{ Auth::user()->name }}<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
+                       <!--  <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li> -->
+                      <!--   <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li> -->
+                        <li class="divider"></li>
                         <li>
                             <a href="/login"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
@@ -59,31 +67,65 @@
                     <li class="active">
                         <a href="/home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
+                   
+                     <li>
+                        <a href="/welcomemessage"><i class="fa  fa-fw fa-book"></i>welcome message</a>
+                    </li> 
                     <li>
-                        <a href="/agenda"><i class="fa fa-fw fa-book"></i>Agenda</a>
-                    </li>
-                      <li>
-                        <a href="/speakers"><i class="fa  fa-fw fa-user"></i>Speakers</a>
-                    </li>
-                    <li>
-                        <a href="/sponsors"><i class="fa  fa-fw fa-user"></i>Sponsors</a>
+                        <a href="/speakers"><i class="fa  fa-fw fa-user"></i>speakers</a>
                     </li>
                      <li>
-                        <a href="/slide"><i class="fa  fa-fw fa-user"></i>slide</a>
-                    </li>
-                    
-                    
+                        <a href="/sponsors"><i class="fa fa-fw fa-user"></i>sponsors</a>
+                    </li> 
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="/slide"><i class="fa fa-fw fa-user"></i>slide</a>
+                    </li>
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-book"></i> Agenda <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="/agenda">Day one</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="/agendatwo">Day two</a>
+                            </li>
+                             <li>
+                                <a href="/introduction">Introduction</a>
                             </li>
                         </ul>
                     </li>
+                      <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#Attendes"><i class="fa fa-fw fa-user"></i> Attendes <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="Attendes" class="collapse">
+                            <li>
+                                <a href="/list">Convetion</a>
+                            </li>
+                            <li>
+                                <a href="/listtwo">Serena</a>
+                            </li>
+                        </ul>
+                    </li> <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#regt"><i class="fa fa-fw fa-book"></i> Registration Nb <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="regt" class="collapse">
+                            <li>
+                                <a href="/nb">National Player </a>
+                            </li>
+                            <li>
+                                <a href="/nbtwo">Youth</a>
+                            </li>
+                        </ul>
+                    </li>
+                  <!--   <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Agenda <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Day one</a>
+                            </li>
+                            <li>
+                                <a href="#">Day two</a>
+                            </li>
+                        </ul>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -106,7 +148,9 @@
                         </ol>
                     </div>
                 </div>
-                <div class="row">
+                    <div class="col-lg-12">
+
+                 <div class="row">
                  <button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" style="margin-left: -1174px;" class="close" > <i class="fa fa-plus"> </i>Add Speaker</button>
                      <div class="col-md-3" style="margin-left: 895px;"">
                         <form action="#" method="get">
@@ -186,12 +230,13 @@
                                         <td>Title</td>
                                         <th>Company name</th>
                                         <th>bio</th>
+                                        <ot
                                     </tr>
                                 </thead>
                                 <tbody>
                                  <?php $i=0;?>
                                             @foreach($speaker AS $value)
-                                                <tr class="success">
+                                                <tr>
                                                     <td>{{++$i}}</td>
                                                     <td>{{$value->first_name}}</td>
                                                     <td>{{$value->last_name}}</td>
@@ -272,9 +317,7 @@
                         </div>
                     </div>
                 </div> 
-
                 </div>
-                <!-- /.row -->
   
 
                

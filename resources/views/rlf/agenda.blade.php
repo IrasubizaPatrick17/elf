@@ -36,17 +36,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">RLF</a>
+                <a class="navbar-brand" href="/home">RLF</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                
+              
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><b class="caret">James</b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>   {{ Auth::user()->name }}<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
+                       <!--  <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li> -->
+                      <!--   <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li> -->
+                        <li class="divider"></li>
                         <li>
                             <a href="/login"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
@@ -54,35 +62,70 @@
                 </li>
             </ul>
           <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
                         <a href="/home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-                    <li>
-                        <a href="/agenda"><i class="fa fa-fw fa-book"></i>agenda</a>
-                    </li>
+                   
                      <li>
+                        <a href="/welcomemessage"><i class="fa  fa-fw fa-book"></i>welcome message</a>
+                    </li> 
+                    <li>
                         <a href="/speakers"><i class="fa  fa-fw fa-user"></i>speakers</a>
                     </li>
+                     <li>
+                        <a href="/sponsors"><i class="fa fa-fw fa-user"></i>sponsors</a>
+                    </li> 
                     <li>
-                        <a href="/sponsors"><i class="fa  fa-fw fa-user"></i>sponsors</a>
+                        <a href="/slide"><i class="fa fa-fw fa-user"></i>slide</a>
                     </li>
                      <li>
-                        <a href="/slide"><i class="fa  fa-fw fa-user"></i>slide</a>
-                    </li>
-                    
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-book"></i> Agenda <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="/agenda">Day one</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="/agendatwo">Day two</a>
+                            </li>
+                             <li>
+                                <a href="/introduction">Introduction</a>
                             </li>
                         </ul>
                     </li>
+                      <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#Attendes"><i class="fa fa-fw fa-user"></i> Attendes <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="Attendes" class="collapse">
+                            <li>
+                                <a href="/list">Convetion</a>
+                            </li>
+                            <li>
+                                <a href="/listtwo">Serena</a>
+                            </li>
+                        </ul>
+                    </li> <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#regt"><i class="fa fa-fw fa-book"></i> Registration Nb <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="regt" class="collapse">
+                            <li>
+                                <a href="/nb">National Player </a>
+                            </li>
+                            <li>
+                                <a href="/nbtwo">Youth</a>
+                            </li>
+                        </ul>
+                    </li>
+                  <!--   <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Agenda <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Day one</a>
+                            </li>
+                            <li>
+                                <a href="#">Day two</a>
+                            </li>
+                        </ul>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -105,6 +148,8 @@
                         </ol>
                     </div>
                 </div>
+                    <div class="col-lg-12">
+
                 <div class="row">
                  <button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" style="margin-left: -1174px;" class="close" > <i class="fa fa-plus"></i>Add agenda</button>
                      <div class="col-md-3" style="margin-left: 895px;"">
@@ -120,7 +165,7 @@
 
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
-                <div class="modal-content" style="background: white;height: 500px;margin-top: 109px;">
+                <div class="modal-content" style="background: white;height: 588px;margin-top: 109px;">
                   <form role="form" action="" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
@@ -153,7 +198,12 @@
                             <div class="col-md-12">
                                 <label>Description</label>
                                 <textarea class="form-control" rows="3" name="description"></textarea><br>
-                            </div><br>
+                            </div>
+                            <div class="col-md-12">
+                                <label>General Introduction</label>
+                                <textarea class="form-control" rows="3" name="agendaintroduction"></textarea><br>
+                            </div>
+                            <br>
                             <div class="col-md-12" style="margin-left: 39%;">
                                 <label></label>
                                 <input type="submit" name="submit" class="btn btn-success" >
@@ -167,7 +217,7 @@
                 </div>
                    <div class="row">
                     <div class="col-lg-12">
-                        <h2>List Of Users</h2>
+                        <h2>AGENDA DAY ONE</h2>
                         <div class="table-responsive" align="center">
                             <table class="table table-bordered table-hover table-striped">
                                 <thead>
@@ -178,19 +228,22 @@
                                         <th>Title of Agenda</th>
                                         <th>Address</th>
                                         <th>Description</th>
+                                        <th>Brief</th>
                                         <th>Options</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                  <?php $i=0;?>
                                             @foreach($agenda AS $value)
-                                                <tr class="success">
+                                                <tr >
                                                     <td>{{++$i}}</td>
                                                     <td>{{$value->start_date}}</td>
                                                     <td>{{$value->end_date}}</td>
                                                     <td>{{$value->title}} </td>
                                                     <td>{{$value->address}} </td>
                                                     <td>{{$value->description}} </td>
+                                                    <td>{{$value->agendaintroduction}} </td>
+
                                                     <td>
                                                         <button data-toggle="modal" data-target="#editAgenda<?php echo $i;?>" class="pull-left edit btn btn-sm btn-default dlt_sm_table"><i class="glyphicon glyphicon-pencil"></i>
                                                         </button><br><br>
@@ -201,7 +254,7 @@
                                             </form>
                             <div id="editAgenda<?php echo $i;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog col-md-6 col-md-offset-3" style="margin-left: 33%;">
-                                    <div class="modal-content" style= "height: 500px;">
+                                    <div class="modal-content" style= "height: 588px;">
                                         <div class="modal-header">
                                         <h4 class="modal-title" id="custom-width-modalLabel">Edit Agenda</h4></div>
                                         <div class="modal-body">
@@ -236,6 +289,11 @@
                             <div class="col-md-12">
                                 <label>Description</label>
                                 <textarea class="form-control" rows="3" name="description" value="{{$value->description}}"></textarea><br>
+                            </div>
+                             <div class="col-md-12">
+                                <label>General Introduction</label>
+                                <textarea class="form-control" rows="3" name="agendaintroduction" 
+                                value="{{$value->agendaintroduction}}"></textarea><br>
                             </div><br>
                             
                                <div class="col-md-12" style="margin-left:35%;"><br>
@@ -260,6 +318,7 @@
 
                 </div>
                 <!-- /.row -->
+                </div>
   
 
                

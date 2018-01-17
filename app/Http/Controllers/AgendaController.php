@@ -56,6 +56,7 @@ class AgendaController extends Controller
         $user->end_date           =Input::get('end_date');
         $user->title              =Input::get('title');
         $user->description        =Input::get('description');
+        $user->agendaintroduction =Input::get('agendaintroduction');
         $user->address            =Input::get('address');
 
         $user->save();
@@ -100,6 +101,7 @@ class AgendaController extends Controller
         $agenda->end_date           =$request->Input('end_date');
         $agenda->title              =$request->Input('title');
         $agenda->address            =$request->Input('address');
+        $agenda->agendaintroduction =$request->Input('agendaintroduction');
         $agenda->description        =$request->Input('description');
 
         if($agenda->save())

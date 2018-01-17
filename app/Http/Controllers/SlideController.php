@@ -4,7 +4,7 @@ namespace rlf\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use rlf\slide;
+use rlf\Slide;
 
 use DB;
 
@@ -24,7 +24,7 @@ class SlideController extends Controller
     public function index()
     {
         
-        $slide       =slide::all();
+        $slide       =Slide::all();
 
         return view('rlf.slide')
                      ->with('slide',$slide);

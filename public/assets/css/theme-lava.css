@@ -384,7 +384,6 @@ p a,
 }
 .btn {
   min-width: 180px;
-  border-radius: 25px;
   background: #0b6ca6;
   text-align: center;
   padding: 13px 0px 14px 0px;
@@ -2224,6 +2223,90 @@ form .field-error {
     display: none;
   }
 }
+
+/***
+Bootstrap Line Tabs by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
+/* Tabs panel */
+
+/* Default mode */
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
+}
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid #fbcdcf;
+}
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid #0b6ca6;
+  position: relative;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+
+/* Below tabs mode */
+
+.tabbable-line.tabs-below > .nav-tabs > li {
+  border-top: 4px solid transparent;
+}
+.tabbable-line.tabs-below > .nav-tabs > li > a {
+  margin-top: 0;
+}
+.tabbable-line.tabs-below > .nav-tabs > li:hover {
+  border-bottom: 0;
+  border-top: 4px solid #fbcdcf;
+}
+.tabbable-line.tabs-below > .nav-tabs > li.active {
+  margin-bottom: -2px;
+  border-bottom: 0;
+  border-top: 4px solid #f3565d;
+}
+.tabbable-line.tabs-below > .tab-content {
+  margin-top: -10px;
+  border-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
 /*!
 // 17. Footers
 // --------------------------------------------------*/
@@ -2403,4 +2486,43 @@ footer{
     color: #000;
     padding-bottom: 20px;
     border-bottom: 5px Solid #d79f32;
+}
+.text-right{
+  text-align: right !important;
+}
+.text-left{
+  text-align: left !important;
+}
+.panel-custom{
+  background-color: #0b6ca6 !important;
+  padding-top: 10px;
+  padding-bottom: 35px;
+}
+.custom-heading{
+    font-size: 15px;
+    font-weight: bold;
+}
+.text-black{
+  color: #000;
+}
+.border-left{
+  border-right:3px dotted #ffffff;
+}
+.head-text{
+  font-size: 18px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  text-align: center !important;
+}
+.second-border-left{
+border-right:3px dotted #000000;
+}
+.first-row{
+  padding-bottom: 0px !important;
+  padding:15px;
+}
+.row-back{
+  background-color:#e8e8e8;
+  margin: 0px;
+  margin-top: 5px !important;
 }
